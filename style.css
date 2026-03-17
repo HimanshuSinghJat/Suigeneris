@@ -1,0 +1,381 @@
+:root {
+  --bg-dark: #050505;
+  --glow-cyan: #00AEEF;
+  --accent-purple: #8A2BE2;
+  --text-light: #EAEAEA;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(circle at 15% 10%, #071422, #000 60%);
+  color: var(--text-light);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Watermark */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url('Sui logo.png') center/1000px no-repeat;
+  opacity: 0.06;
+  filter: blur(3px) saturate(120%);
+  animation: floatLogo 18s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(-6%) scale(1); opacity: 0.06; }
+  50% { transform: translateY(6%) scale(1.02); opacity: 0.09; }
+}
+
+.site-layer { position: relative; z-index: 2; }
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* ensures it stays above other content */
+  background-color: rgba(0, 0, 0, 0.75); /* optional: semi-transparent bg */
+}
+.nav-link { color: rgba(234,234,234,0.9) !important; transition: 0.3s; }
+.nav-link:hover { color: var(--glow-cyan) !important; text-shadow: 0 0 10px rgba(0,174,239,0.12); }
+@media (max-width: 360px) {
+  .sbjain-logo { width: 32px; height: 32px; }
+  .sui-circle { height: 34px !important; }
+  .navbar-brand span { font-size: 1.1rem !important; }
+}
+/* SB Jain Logo - Perfect Circle */
+.sbjain-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;        /* crops square image nicely */
+  border-radius: 50%;       /* makes it circular */
+  background: #fff;         /* clean background */
+  padding: 3px;             /* space inside circle */
+  box-shadow: 0 0 12px rgba(0,174,239,0.25);
+}
+
+/* Suigeneris Logo */
+.sui-logo{
+  height:120px;
+  width:auto;
+  border-radius:10px;
+  filter:drop-shadow(0 0 10px rgba(0,174,239,0.25));
+}
+/* =========================
+   Suigeneris Logo Responsive
+   ========================= */
+
+.sui-circle {
+  height: 72px;
+  width: auto;
+  max-height: 72px;
+  filter: drop-shadow(0 0 10px rgba(0,174,239,0.25));
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .sui-circle {
+    height: 64px;
+    max-height: 64px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  .sui-circle {
+    height: 56px;
+    max-height: 56px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .sui-circle {
+    height: 52px;
+    max-height: 52px;
+  }
+}
+
+.navbar-brand img {
+  flex-shrink: 0;
+}
+
+
+
+/* Brand Text */
+.brand-text{
+  font-weight:800;
+  font-size:1.9rem;
+  color:#3fa9f5;
+  letter-spacing:.4px;
+}
+
+/* Hero */
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.brand-title {
+  font-weight: 800;
+  font-size: clamp(40px, 6vw, 84px);
+  color: var(--text-light);
+  text-shadow: 0 0 12px rgba(0,174,239,0.18);
+}
+.brand-sub { color: #bfc9d6; }
+
+/* Buttons */
+.btn-neon {
+  background: linear-gradient(90deg, var(--glow-cyan), #5FE1FF);
+  color: #020617;
+  font-weight: 600;
+  box-shadow: 0 6px 24px rgba(0,174,239,0.12);
+  border: none;
+}
+.btn-outline-neon {
+  color: var(--glow-cyan);
+  border: 1px solid rgba(0,174,239,0.18);
+  background: rgba(255,255,255,0.02);
+}
+.btn-outline-neon:hover {
+  color: white;
+  border-color: rgba(0,174,239,0.4);
+  box-shadow: 0 6px 30px rgba(0,174,239,0.12);
+}
+
+/* Glass Cards */
+.glass-card {
+  margin-bottom: 30px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,174,239,0.08);
+  border-color: rgba(0,174,239,0.18);
+}
+
+/* Headings */
+.glow-heading { color: var(--text-light); text-shadow: 0 0 10px rgba(0,174,239,0.06); }
+
+/* Gallery Images */
+.gallery-img {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  border: 2px solid transparent;
+  background: linear-gradient(#000,#000) padding-box, linear-gradient(135deg, #00AEEF,#5FE1FF) border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(0,174,239,0.25);
+}
+
+/* Auto scroll */
+@keyframes scrollLoop { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.auto-scroll { display: flex; animation: scrollLoop 40s linear infinite; }
+.auto-scroll:hover { animation-play-state: paused; }
+
+/* Lightbox */
+#lightbox {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+#lightbox img {
+  max-width: 90%; max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,174,239,0.5);
+  border: 1px solid rgba(0,174,239,0.3);
+  animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Group Banner */
+.group-banner-wrapper { position: relative; width: 100%; height: 65vh; overflow: hidden; border-radius: 12px; }
+.group-banner-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8) contrast(1.1) saturate(1.2); border-radius: 12px; box-shadow: 0 0 20px rgba(0,174,239,0.25); transition: transform 10s ease-in-out; }
+.group-banner-wrapper:hover img { transform: scale(1.05); }
+.group-banner-overlay { position: absolute; inset:0; display:flex; align-items:center; justify-content:center; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)); }
+.group-banner-text { color: var(--glow-cyan); font-size: 2.4rem; font-weight:700; text-shadow: 0 0 25px rgba(0,174,239,0.45); }
+
+/* Instagram Glow */
+.instagram-glow i {
+  color: #00bfff;
+  transition: all 0.4s ease;
+  text-shadow:0 0 8px rgba(0,191,255,0.7),0 0 20px rgba(0,191,255,0.4),0 0 35px rgba(0,191,255,0.3);
+}
+.instagram-glow i:hover {
+  color: #00ffff;
+  text-shadow:0 0 10px rgba(0,255,255,0.9),0 0 25px rgba(0,255,255,0.7),0 0 45px rgba(0,255,255,0.5);
+  transform: scale(1.2);
+}
+
+/* Footer */
+footer { border-top: 1px solid rgba(0,174,239,0.06); }
+
+/* Responsive */
+@media (max-width: 576px) {
+  .gallery-img { width: 220px; height: 150px; }
+  .group-banner-wrapper { height: 40vh; }
+  .group-banner-text { font-size: 1.6rem; }
+}
+
+.section-offset {
+ scroll-margin-top: 100px;
+  padding-top: 100px; /* space from top so it doesn't stick to previous section */
+  padding-bottom: 60px; /* optional, adds space below section */
+}
+
+
+/* -----------------------------------------
+   PRELOADER (Dark + Neon Effect)
+------------------------------------------*/
+/* FULLSCREEN DARK PRELOADER */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Center vertically */
+  align-items: center;       /* Center horizontally */
+  z-index: 999999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .7s ease, visibility .7s ease;
+}
+
+/* STEP 1 — Loading text centered */
+.loading-text {
+  color: #00eaff;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0 0 10px #00eaff;
+  margin-bottom: 20px;
+  opacity: 1;
+  animation: fadeOutText 0.6s ease forwards;
+  animation-delay: 1.8s;
+}
+
+/* Bouncing dots */
+.dots::after {
+  content: "";
+  animation: dotsBounce 1s infinite;
+}
+
+@keyframes dotsBounce {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+  100% { content: ""; }
+}
+
+/* LOGO — Starts small */
+.preloader-logo {
+  width: 150px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: transform 1.2s ease-out, opacity 0.7s ease-out;
+}
+
+/* LOGO ZOOMS TO FULLSCREEN */
+#preloader.show-logo .preloader-logo {
+  opacity: 1;
+  transform: scale(6); /* 🔥 MASSIVE fullscreen zoom */
+  filter: drop-shadow(0 0 25px #00eaff) drop-shadow(0 0 50px #00eaff);
+}
+
+/* Fade-out of loading text */
+@keyframes fadeOutText {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-25px); }
+}
+
+/* Remove preloader */
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Full Screen Overlay */
+.dept-overlay {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url("group-photo.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Show class */
+.dept-overlay.show {
+  opacity: 1;
+}
+
+/* Text Styling */
+.dept-text {
+  text-align: center;
+  color: white;
+  animation: fadeUp 1.5s ease;
+}
+
+.dept-text h1 {
+  font-size: 4rem;
+}
+
+.dept-text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.dept-text h3 {
+  font-size: 2rem;
+  color: #3fa9f5;
+  margin-top: 10px;
+  text-shadow: 0 0 15px #3fa9f5;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#fireworksCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
