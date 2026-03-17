@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Suigeneris | Gallery</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Internal Gallery Styles -->
+  <style>
+    /* SB Jain Logo - Perfect Circle */
+.sbjain-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;        /* crops square image nicely */
+  border-radius: 50%;       /* makes it circular */
+  background: #fff;         /* clean background */
+  padding: 3px;             /* space inside circle */
+  box-shadow: 0 0 12px rgba(0,174,239,0.25);
+}
+    @media (max-width: 360px) {
+  .sbjain-logo { width: 32px; height: 32px; }
+  .sui-circle { height: 34px !important; }
+  .navbar-brand span { font-size: 1.1rem !important; }
+}
+
+.sui-circle {
+  height: 72px;
+  width: auto;
+  max-height: 72px;
+  filter: drop-shadow(0 0 10px rgba(0,174,239,0.25));
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .sui-circle {
+    height: 64px;
+    max-height: 64px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  .sui-circle {
+    height: 56px;
+    max-height: 56px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .sui-circle {
+    height: 52px;
+    max-height: 52px;
+  }
+}
+
+.navbar-brand img {
+  flex-shrink: 0;
+}
+    /* ================= HERO ================= */
+.hero{
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding-top:80px;
+}
+
+.hero h1{
+  font-weight:900;
+  font-size:clamp(44px,6vw,78px);
+  letter-spacing:1px;
+  text-shadow:0 0 20px rgba(0,174,239,.3);
+}
+
+.hero p{
+  font-weight:400;
+  color:#bfc9d6;
+  letter-spacing:.4px;
+}
+
+/* ================= SECTION ================= */
+.section{
+  padding:60px 8% 40px;
+}
+
+.section-title{
+  text-align:center;
+  font-weight:800;
+  font-size:32px;
+  margin:10px 0 12px;
+  letter-spacing:.6px;
+  text-shadow:0 0 14px rgba(0,174,239,.25);
+}
+
+.section-subtitle{
+  text-align:center;
+  color:#a9b8c9;
+  margin-bottom:40px;
+}
+    /* ================= TEAM ================= */
+.team-group{margin-bottom:80px}
+
+.team-group h3{
+  text-align:center;
+  font-weight:700;
+  font-size:26px;
+  color:var(--glow-cyan);
+  margin-bottom:35px;
+  letter-spacing:.5px;
+  text-shadow:0 0 12px rgba(0,174,239,.35);
+}
+
+.team-grid,
+.faculty-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:24px;
+}
+
+/* ================= TEAM CARD ================= */
+.team-card{
+  width:240px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(0,174,239,.2);
+  border-radius:16px;
+  padding:24px;
+  text-align:center;
+  transition:.35s;
+}
+
+.team-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 28px rgba(0,174,239,.35);
+}
+
+.team-card img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(0,174,239,.4);
+  margin-bottom:14px;
+}
+
+.team-card h4{
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.team-card small{
+  color:#b0c7d6;
+}
+
+/* faculty size */
+.faculty-grid .team-card{width:260px}
+  </style>
+</head>
+
+<body class="gallery-page">
+  <!-- NAVBAR (fixed) -->
+  <nav class="navbar navbar-expand-lg site-layer" style="position:fixed; top:0; left:0; right:0; z-index:9999; background:linear-gradient(90deg, rgba(5,10,15,0.85), rgba(2,6,10,0.78)); backdrop-filter:blur(6px);">
+    <div class="container py-2 d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+
+  <!-- SB Jain Logo (CIRCLE) -->
+  <img src="S._B._JAIN.jpg" alt="SB Jain" class="sbjain-logo">
+
+  <!-- Suigeneris Logo -->
+<img src="Sui logo.png" alt="Sui" class="sui-circle">
+
+  <span style="font-weight:700; color:#3fa9f5; font-size:1.9rem;">
+    Suigeneris
+  </span>
+
+</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#past">Past Events</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#upcoming">Upcoming</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link px-3 active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#contact">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+<section class="hero site-layer">
+  <div>
+    <h1>Team Suigeneris</h1>
+    <p>Department of Computer Science & Engineering</p>
+  </div>
+</section>
+
+<section class="section site-layer">
+  <h2 class="section-title">Team Suigeneris 2025–26</h2>
+  <p class="section-subtitle">The minds behind innovation</p>
+
+  <!-- Faculty -->
+  <div class="team-group">
+    <h3>Faculty Coordinator</h3>
+    <div class="faculty-grid">
+      <div class="team-card">
+        <img src="faculty/sonali.jpg">
+        <h4>Mrs. Sonali Zunke</h4>
+        <small>Forum In-Charge</small><br>
+        <small>Department of CSE</small>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Core Committee -->
+  <div class="team-group">
+    <h3>Core Committee</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="core/varun.jpg"><h4>Mr. Varun Bhoyar</h4><small>President</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="core/prajwalit.jpg"><h4>Mr. Prajwalit Mankar</h4><small>Vice-President</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="core/chetna.jpg"><h4>Ms. Chetna Kurzekar</h4><small>Secretary</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="core/rushita.jpg"><h4>Ms. Rushita Limje</h4><small>Joint Secretary</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="core/vivek2.jpeg"><h4>Mr. Vivek Jain</h4><small>Treasurer</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="core/dhruv.jpg"><h4>Mr. Dhruv Mishra</h4><small>Joint Treasurer</small><br><small>3rd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Event Management -->
+  <div class="team-group">
+    <h3>Event Management Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="event/dev2.jpeg"><h4>Mr. Dev Soni</h4><small>Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="event/pragati.jpg"><h4>Ms. Pragati Ghugal</h4><small>Co-Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="event/mithilesh.jpg"><h4>Mr. Mithilesh Dhoble</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="event/suhani.jpg"><h4>Ms. Suhani Pandey</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="event/anvay.jpg"><h4>Mr. Anvay Walde</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="event/saniya.jpg"><h4>Ms. Saniya Shahu</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="event/vansh.jpeg"><h4>Mr. Vansh Parate</h4><small>Co-ordinator</small><br><small>3rd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Designing -->
+  <div class="team-group">
+    <h3>Designing Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="design/kavya.jpg"><h4>Mr. Kavya Dhengare</h4><small>Head</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="design/nidhi.jpg"><h4>Ms. Nidhi Sonkusre</h4><small>Co-Head</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="design/himani.jpg"><h4>Ms. Himani Charduke</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Documentation -->
+  <div class="team-group">
+    <h3>Documentation Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="doc/himanshu.jpg"><h4>Mr. Himanshu Singh Jat</h4><small>Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="doc/anshika.jpg"><h4>Ms. Anshika Masand</h4><small>Co-Head</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="doc/vanya.jpg"><h4>Ms. Vanya Gupta</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Marketing -->
+  <div class="team-group">
+    <h3>Marketing Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="market/janvhi.jpg"><h4>Ms. Janhvi Shukla</h4><small>Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="market/riddhi.jpg"><h4>Ms. Riddhi Barole</h4><small>Co-Head</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="market/vedshree.jpg"><h4>Ms. Vedshree Satpude</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="market/gagan.jpg"><h4>Mr. Gagan Jain</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Media -->
+  <div class="team-group">
+    <h3>Media Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="media/aryan.jpg"><h4>Mr. Aryan Wanjari</h4><small>Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="media/vedant.jpg"><h4>Mr. Vedant Mankar</h4><small>Co-Head</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="media/utkarsh.jpg"><h4>Mr. Utkarsh Kene</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="media/roshan2.jpeg"><h4>Mr. Roshan Hingnekar</h4><small>Co-ordinator</small><br><small>3rd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Discipline -->
+  <div class="team-group">
+    <h3>Discipline Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="disc/mehul.jpg"><h4>Mr. Mehul Shukla</h4><small>Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="disc/harihar.jpg"><h4>Mr. Harihar Kadhe</h4><small>Co-Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="disc/pritam.jpg"><h4>Mr. Pritam Helonde</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="disc/suraj.jpg"><h4>Mr. Suraj Gunjkar</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="disc/krish.jpg"><h4>Mr. Krish Tandekar</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="disc/mrunali.jpg"><h4>Ms. Mrunali Kirpane</h4><small>Co-ordinator</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="disc/vedant.jpg"><h4>Mr. Vedant Hanwate</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="disc/disha.jpg"><h4>Ms. Disha Chawhan</h4><small>Co-ordinator</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="disc/harshit.jpg"><h4>Mr. Harshit Rawat</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+    </div>
+  </div>
+
+  <!-- Technical -->
+  <div class="team-group">
+    <h3>Technical Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="tech/amit.jpg"><h4>Mr. Amit Tiwari</h4><small>Head</small><br><small>3rd Year</small></div>
+      <div class="team-card"><img src="tech/ayush.jpg"><h4>Mr. Ayush Jaiswal</h4><small>Co-Head</small><br><small>2nd Year</small></div>
+      <div class="team-card"><img src="tech/prajwal.jpg"><h4>Mr. Prajwal Katkar</h4><small>Co-ordinator</small><br><small>2nd Year</small></div>
+    </div>
+  </div>
+
+   <!-- Cultural -->
+  <div class="team-group">
+    <h3>Cultural Team</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="cultural/Shivani.jpeg"><h4>Ms. Shivani Dhakate</h4><small>Head</small><br><small>3rd Year</small></div>
+    </div>
+  </div>
+
+    <!-- Mentors -->
+  <div class="team-group">
+    <h3>Mentors</h3>
+    <div class="team-grid">
+      <div class="team-card"><img src="mentors/ayush.jpg"><h4>Mr. Ayush Jaiswal</h4><small>Mentor</small><br><small>4th Year</small></div>
+      <div class="team-card"><img src="mentors/kuldeep.jpg"><h4>Mr. Kuldeep Tiwari</h4><small>Mentor</small><br><small>4th Year</small></div>
+      <div class="team-card"><img src="mentors/alok.jpg"><h4>Mr. Alok Singh</h4><small>Mentor</small><br><small>4th Year</small></div>
+    </div>
+  </div>
+
+</section>
+
+ <div class="text-center mt-5">
+        <a href="index.html" class="btn btn-outline-neon btn-lg">← Back to Home</a>
+      </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 site-layer mt-5">
+    <div class="container text-center">
+      <small class="text-secondary">Made with 💙 by Team Suigeneris | Department of CSE</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Lightbox
+    const images = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+    lightbox.addEventListener('click', () => lightbox.style.display = 'none');
+
+    // Clone each auto-scroll set for infinite loop
+    document.querySelectorAll('.auto-scroll').forEach(scroll => {
+      const clone = scroll.cloneNode(true);
+      scroll.parentElement.appendChild(clone);
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
